@@ -1,0 +1,35 @@
+# First Window
+<FirstWindow>:
+    name: "first"
+    heard_speech: heard_speech
+    MDBoxLayout:
+        orientation: 'vertical'
+        spacing: 15
+        pos_hint: {'center_x': 0.5, 'center_y': 0.55}
+        size_hint: .9, .85
+        MDCard:
+            padding: 20
+            elevation: 1
+            ScrollView:
+                MDTextField:
+                    id: heard_speech
+                    multiline: True
+                    mode: "rectangle"
+                    font_style: 'Caption'
+                    text: "Heard Speech"
+                    color_mode: 'custom'
+                    line_color_focus: 0, 0, 0, 1
+                    line_color_normal: 0, 0, 0, 1        
+        MDBoxLayout:
+            orientation: 'horizontal'
+            spacing: 10
+            size_hint_y: None
+            MDIconButton:
+                id: rec
+                icon: 'record-circle-outline'
+                pos_hint: {'center_x': 0.5, 'center_y': 0.5}
+                size_hint_x: .50
+                on_release:
+                    root.toggle_recording()
+
+            
